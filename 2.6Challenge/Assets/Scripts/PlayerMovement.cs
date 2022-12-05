@@ -15,9 +15,15 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         Move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+         Move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")*5);
          transform.Translate(Move*Time.deltaTime);
-         Vector2 flip = new Vector2(-1.0f, 1.0f);
-         transform.localScale *= flip;
+        if (Input.GetAxis("Horizontal") < 0)
+        {
+            player.localScale = new Vector2(-2.745138f, 2.75347f);
+        }
+        if(Input.GetAxis("Horizontal") > 0)
+        {
+            player.localScale = new Vector2(2.745138f, 2.75347f);
+        }
     }
 }
