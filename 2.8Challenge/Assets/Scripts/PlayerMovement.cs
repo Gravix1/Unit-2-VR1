@@ -80,10 +80,25 @@ public class PlayerMovement : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
+    void OnTriggerEnter2D(Collider2D trigger)
+    {
+        if (trigger.gameObject.tag == "Acorn")
+        {
+            Debug.Log("NOM NOM NOM");
+            animator.SetBool("IsJumping", false);
+            acornCollect = acornCollect + 1;
+            Debug.Log(acornCollect);
+        }
+        if (trigger.gameObject.tag == "House")
+        {
+            SceneManager.LoadScene("Level 2");
+            playerHealth = 5;
+        }
+    }
     void OnBecameInvisible()
     {
         Destroy(gameObject);
-        SceneManager.LoadScene("Lose");
+        playerHealth = 0;
     }
 
 }
