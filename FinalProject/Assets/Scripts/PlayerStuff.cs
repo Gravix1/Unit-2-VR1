@@ -91,11 +91,6 @@ public class PlayerStuff : MonoBehaviour
                 SceneManager.LoadScene("Lose");
             }
         }
-        if (collision.gameObject.tag == "LevelFinish")
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            playerHealth = 5;
-        }
     }
     void OnTriggerEnter2D(Collider2D trigger)
     {
@@ -103,10 +98,14 @@ public class PlayerStuff : MonoBehaviour
         {
             starCollect = starCollect + 1;
         }
+        if (trigger.gameObject.tag == "LevelFinish")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            playerHealth = 5;
+        }
     }
     void OnBecameInvisible()
     {
         Destroy(gameObject);
-        playerHealth = 0;
     }
 }

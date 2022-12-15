@@ -9,6 +9,7 @@ public class StartGameButtonStuff : MonoBehaviour
     public void ToMenu()
     {
         SceneManager.LoadScene("Level1");
+        PlayerStuff.playerHealth = 5;
     }
 
 }

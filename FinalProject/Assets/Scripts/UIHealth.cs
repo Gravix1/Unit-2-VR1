@@ -10,5 +10,6 @@ public class UIHealth : MonoBehaviour
     void Update()
     {
         healthText.text = PlayerStuff.playerHealth.ToString();
+        healthText.text = PlayerStuff2.playerHealth.ToString();
     }
 }

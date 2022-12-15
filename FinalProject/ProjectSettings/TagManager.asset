@@ -11,6 +11,10 @@ TagManager:
   - TrapSpike
   - TrapSpikeBall
   - LevelFinish
+  - LevelDoor1
+  - LevelDoor2
+  - LevelDoor3
+  - GameWin
   layers:
   - Default
   - TransparentFX
